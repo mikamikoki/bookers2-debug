@@ -24,7 +24,7 @@
 
 <td>コメント数：<%= @book.book_comments.count %></td>
 <% @book.book_comments.each do |book_comment| %>
-  <td><%= image_tag('sample-author1.jpg') %></td>
+  <td><%= image_tag('no-image-icon.jpg') %></td>
   <%= book_comment.user.name %>
   <%= book_comment.created_at.strftime('%Y/%m/%d') %><%= book_comment.comment %>
 <% end %>
