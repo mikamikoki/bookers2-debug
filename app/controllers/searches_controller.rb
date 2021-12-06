@@ -15,25 +15,25 @@ class SearchesController < ApplicationController
 
   private
   def search_for(model, content, method)
+
     # 選択したモデルがuserだったら
     if model == 'user'
       # 選択した検索方法がが完全一致だったら
       if method == 'perfect'
-        User.where(name: content)
+      return User.where(name: content)
       # 選択した検索方法がが部分一致だったら
       else
-        User.where('name LIKE ?', '%'+content+'%')
+      return User.where('name LIKE ?', '%'+content+'%')
       end
-    # 選択したモデルがpostだったら
-    if model == 'book'
+    # 選択したモデルがbookだったら
+    elsif model == 'book'
       # 選択した検索方法がが完全一致だったら
       if method == 'perfect'
-        User.where(name: content)
+      return Book.where(title: content)
       # 選択した検索方法がが部分一致だったら
       else
-        User.where('name LIKE ?', '%'+content+'%')
+      return Book.where('title LIKE ?', '%'+content+'%')
       end
-    end
     end
   end
 end

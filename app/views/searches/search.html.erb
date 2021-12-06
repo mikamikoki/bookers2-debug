@@ -1,0 +1,9 @@
+<%= render 'layouts/seach' %>
+
+<% if @model == 'user' %>
+  <h2>Users seach for "<%= @content %>"</h2>
+  <%= render 'users/index', users: @records %>
+<% else @model == 'book' %>
+  <h2>Books seach for "<%= @content %>"</h2>
+    <%= render 'books/index', books: @records %>
+<% end %>
